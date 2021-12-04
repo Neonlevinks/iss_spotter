@@ -30,7 +30,7 @@ const { nextISSTimesForMyLocation } = require('./iss');
 const printNextPasses = (flyOvers) => {
   for (const flyOver of flyOvers) {
     const nextTime = new Date(0);
-    nextTime.setUTCSeconds(flyOver.riseTime);
+    nextTime.setUTCSeconds(flyOver.risetime);
     const howLong = flyOver.duration;
     console.log(`Next ISS flyover at ${nextTime} for ${howLong}`)
   };
@@ -45,3 +45,4 @@ nextISSTimesForMyLocation((error, flyOvers) => {
   printNextPasses(flyOvers);
 });
 
+module.exports = { printNextPasses }
